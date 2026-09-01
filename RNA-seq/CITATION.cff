@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the data descriptor below."
+title: "PERCIVAL: RNA-seq analysis code for the tomato leaf and rhizosphere multi-omics dataset"
+abstract: >-
+  Scripts and commands for the RNA-seq bioinformatic analyses and figure
+  generation of the Scientific Data descriptor "Multi-omics analyses of tomato
+  rhizosphere and leaves treated with a biowaste-derived biostimulant extract":
+  preprocessing and alignment, technical validation QC, and quantification of
+  the relative contributions of experimental trial, time point and treatment to
+  transcriptome variance. Metabarcoding code is deposited separately.
+type: software
+license: MIT
+keywords:
+  - RNA-seq
+  - biostimulant
+  - humic substances
+  - Solanum lycopersicum
+  - batch effect
+repository-code: "https://doi.org/10.5281/zenodo.0000000"   # replace with the minted DOI
+authors:
+  - family-names: Sonego
+    given-names: Paolo
+    affiliation: "Fondazione Edmund Mach"
+    email: paolo.sonego@fmach.it
+references:
+  - type: dataset
+    title: "Multi-omics analyses of tomato rhizosphere and leaves treated with a biowaste-derived biostimulant extract"
+    doi: "10.5281/zenodo.19336337"
+  - type: dataset
+    title: "Raw sequencing data, NCBI SRA"
+    identifiers:
+      - type: other
+        value: "PRJNA1425279"

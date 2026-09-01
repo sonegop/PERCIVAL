@@ -1,0 +1,13 @@
+Samples per Condition x Time x Experiment
+
+               Experiment Exp1 Exp2
+Condition Time                     
+Cntr      T1                 5    5
+          T2                 5    5
+E1_D3     T1                 5    5
+          T2                 5    5
+E1_D4     T1                 5    5
+          T2                 5    5
+
+All cells equal to 5 replicates: TRUE
+Total libraries: 60
