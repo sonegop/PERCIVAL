@@ -16,7 +16,12 @@ keywords:
   - humic substances
   - Solanum lycopersicum
   - batch effect
-repository-code: "https://doi.org/10.5281/zenodo.0000000"   # replace with the minted DOI
+repository-code: "https://github.com/sonegop/PERCIVAL"
+url: "https://doi.org/10.5281/zenodo.22232657"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22232657"
+    description: "Concept DOI: resolves to the latest archived release of this repository"
 authors:
   - family-names: Sonego
     given-names: Paolo
