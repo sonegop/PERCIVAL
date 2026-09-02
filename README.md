@@ -11,12 +11,12 @@ results; the data themselves are deposited separately and openly:
 | Resource | Accession |
 |---|---|
 | Raw sequencing reads | NCBI SRA BioProject **PRJNA1425279** |
-| Count matrices, physiology, soil and leaf chemistry | Zenodo **[10.5281/zenodo.19336337](https://doi.org/10.5281/zenodo.19336337)** |
+| Count matrices, physiology, soil and leaf chemistry | Zenodo **[10.5281/zenodo.19336336](https://doi.org/10.5281/zenodo.19336336)** |
 | This repository, archived | Zenodo **[10.5281/zenodo.22232657](https://doi.org/10.5281/zenodo.22232657)** |
 
-The two Zenodo records are distinct: `19336337` is the data deposit,
-`22232657` is the archived code. The code DOI is a concept DOI and always
-resolves to the most recent release.
+The two Zenodo records are distinct: `19336336` is the data deposit,
+`22232657` is the archived code. Both are concept DOIs and always resolve to
+the most recent version of their record.
 
 ---
 
@@ -116,7 +116,7 @@ running anything.
 
 ## Licence and citation
 
-Code: MIT (`RNA-seq/LICENSE`). Data on Zenodo: CC-BY 4.0. Citation metadata for
+Code: MIT (`LICENSE`). Data on Zenodo: CC-BY 4.0. Citation metadata for
 this repository is in `RNA-seq/CITATION.cff`.
 
 Each release of this repository is archived on Zenodo. Cite the concept DOI,

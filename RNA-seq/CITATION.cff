@@ -30,7 +30,7 @@ authors:
 references:
   - type: dataset
     title: "Multi-omics analyses of tomato rhizosphere and leaves treated with a biowaste-derived biostimulant extract"
-    doi: "10.5281/zenodo.19336337"
+    doi: "10.5281/zenodo.19336336"
   - type: dataset
     title: "Raw sequencing data, NCBI SRA"
     identifiers:

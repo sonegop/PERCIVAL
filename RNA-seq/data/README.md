@@ -1,7 +1,7 @@
 # Input data
 
 Large matrices are not versioned here. Download them from Zenodo
-(<https://doi.org/10.5281/zenodo.19336337>) into this directory:
+(<https://doi.org/10.5281/zenodo.19336336>) into this directory:
 
 | File expected here | Zenodo file | Used by |
 |---|---|---|

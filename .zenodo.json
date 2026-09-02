@@ -1,0 +1,36 @@
+{
+  "title": "PERCIVAL: RNA-seq analysis code for the tomato leaf transcriptome dataset",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "mit",
+  "description": "<p>Scripts and commands used for the RNA-seq bioinformatic analyses and figure generation of the Scientific Data descriptor <em>Multi-omics analyses of tomato rhizosphere and leaves treated with a biowaste-derived biostimulant extract</em> (Bona <em>et al.</em>, Fondazione Edmund Mach).</p><p>Contents:</p><ul><li><strong>Preprocessing and alignment</strong> &mdash; SLURM batch scripts as executed, with every tool inside an Apptainer image: FastQC 0.12.1, fastp 0.23.4, STAR 2.7.11b against <em>Solanum lycopersicum</em> SL5.0 with the ITAG5.0 annotation, samtools 1.22.1, and featureCounts 2.1.1 (<code>-p -s 2 --countReadPairs -t exon -g Parent</code>).</li><li><strong>Technical validation</strong> &mdash; read retention through the pipeline, and a blind variance-stabilising transformation with a sample-to-sample Euclidean distance heatmap, plus the supplementary QC table and supporting QC panels.</li><li><strong>Variance decomposition</strong> &mdash; Bioconductor variancePartition applied under the model <code>~ trial * time point + condition</code> with sum-to-zero contrasts, quantifying the contributions of experimental trial, sampling time point and treatment per gene and per principal component, with a moderated F-test per model term.</li><li><strong>Figure assembly</strong> &mdash; composition of the descriptor's Figure 2 from the panels the analysis scripts write.</li></ul><p>The analysis is reproducible end to end: no absolute path appears in the R code, and <code>run_all.sh</code> regenerates every figure and table from the deposited count matrix. Analysis outputs are included alongside the code so they can be checked without an R installation.</p><p>The data are deposited separately: count matrices, physiology, soil and leaf chemistry on Zenodo (10.5281/zenodo.19336336) and raw sequencing reads at NCBI SRA (BioProject PRJNA1425279).</p>",
+  "creators": [
+    {
+      "name": "Sonego, Paolo",
+      "affiliation": "Fondazione Edmund Mach"
+    }
+  ],
+  "keywords": [
+    "RNA-seq",
+    "biostimulant",
+    "humic substances",
+    "Solanum lycopersicum",
+    "tomato",
+    "batch effect",
+    "variancePartition",
+    "reproducible research"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.19336336",
+      "relation": "isSupplementTo",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/sonegop/PERCIVAL",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

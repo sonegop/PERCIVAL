@@ -15,7 +15,7 @@ The data are deposited separately and openly:
 | Resource | Accession |
 |---|---|
 | Raw sequencing reads | NCBI SRA BioProject **PRJNA1425279** |
-| Count matrices, physiology, soil and leaf chemistry | Zenodo **[10.5281/zenodo.19336337](https://doi.org/10.5281/zenodo.19336337)** |
+| Count matrices, physiology, soil and leaf chemistry | Zenodo **[10.5281/zenodo.19336336](https://doi.org/10.5281/zenodo.19336336)** |
 
 ---
 
@@ -134,4 +134,4 @@ JGI: <https://phytozome-next.jgi.doe.gov/info/Slycopersicum_ITAG5_0>
 
 ## Licence
 
-Code: MIT (`LICENSE`). Data on Zenodo: CC-BY 4.0.
+Code: MIT (`../LICENSE`). Data on Zenodo: CC-BY 4.0.
