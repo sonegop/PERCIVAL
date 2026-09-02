@@ -117,7 +117,7 @@ running anything.
 ## Licence and citation
 
 Code: MIT (`LICENSE`). Data on Zenodo: CC-BY 4.0. Citation metadata for
-this repository is in `RNA-seq/CITATION.cff`.
+this repository is in `CITATION.cff`.
 
 Each release of this repository is archived on Zenodo. Cite the concept DOI,
 [10.5281/zenodo.22232657](https://doi.org/10.5281/zenodo.22232657), which

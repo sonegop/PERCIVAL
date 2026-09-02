@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the data descriptor below."
-title: "PERCIVAL: RNA-seq analysis code for the tomato leaf and rhizosphere multi-omics dataset"
+title: "PERCIVAL: RNA-seq analysis code for the tomato leaf transcriptome dataset"
 abstract: >-
   Scripts and commands for the RNA-seq bioinformatic analyses and figure
   generation of the Scientific Data descriptor "Multi-omics analyses of tomato
