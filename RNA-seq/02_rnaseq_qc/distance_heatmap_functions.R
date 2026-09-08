@@ -49,7 +49,16 @@ annotation_palette <- function(x, palette_name) {
 
 ## Rows and columns are ordered by complete-linkage clustering of the distance
 ## matrix itself, not of the rows of that matrix.
-build_distance_heatmap <- function(dist_mat, targets, base_size = 8) {
+##
+## The arguments after `base_size` exist only so that the same heatmap can be
+## drawn into a small page-fit panel (04_figures/build_figure2_pagefit.R), where
+## 60 margin labels would fall below 3 pt. Their defaults reproduce the panel as
+## published, so callers that do not set them are unaffected.
+build_distance_heatmap <- function(dist_mat, targets, base_size = 8,
+                                   show_sample_names = TRUE,
+                                   anno_size     = unit(5, "mm"),
+                                   anno_gap      = unit(1.5, "mm"),
+                                   legend_height = unit(3, "cm")) {
   col_fun <- colorRamp2(
     breaks = seq(0, max(dist_mat), length.out = 255),
     colors = colorRampPalette(rev(brewer.pal(9, "Blues")))(255)
@@ -67,12 +76,14 @@ build_distance_heatmap <- function(dist_mat, targets, base_size = 8) {
     Condition = targets$Condition, Experiment = targets$Experiment,
     Time = targets$Time, col = ann_cols,
     annotation_legend_param = list(Condition = leg_par, Experiment = leg_par, Time = leg_par),
-    annotation_name_gp = gpar(fontsize = base_size), gap = unit(1.5, "mm")
+    annotation_name_gp = gpar(fontsize = base_size), gap = anno_gap,
+    simple_anno_size = anno_size
   )
   ha_row <- rowAnnotation(
     Condition = targets$Condition, Experiment = targets$Experiment,
     Time = targets$Time, col = ann_cols,
-    show_legend = FALSE, show_annotation_name = FALSE, gap = unit(1.5, "mm")
+    show_legend = FALSE, show_annotation_name = FALSE, gap = anno_gap,
+    simple_anno_size = anno_size
   )
 
   Heatmap(
@@ -85,8 +96,8 @@ build_distance_heatmap <- function(dist_mat, targets, base_size = 8) {
     clustering_distance_columns = function(m) as.dist(m),
     clustering_method_rows      = "complete",
     clustering_method_columns   = "complete",
-    show_row_names              = TRUE,
-    show_column_names           = TRUE,
+    show_row_names              = show_sample_names,
+    show_column_names           = show_sample_names,
     show_row_dend               = FALSE,
     show_column_dend            = FALSE,
     row_names_gp                = gpar(fontsize = base_size),
@@ -96,7 +107,7 @@ build_distance_heatmap <- function(dist_mat, targets, base_size = 8) {
       title         = "Euclidean\ndistance",
       title_gp      = gpar(fontsize = base_size + 1),
       labels_gp     = gpar(fontsize = base_size),
-      legend_height = unit(3, "cm")
+      legend_height = legend_height
     )
   )
 }

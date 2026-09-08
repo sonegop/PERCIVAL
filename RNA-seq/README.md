@@ -46,9 +46,14 @@ env/                           R package versions for the archived run
   variance_partition.R         variancePartition: contribution of trial, time
                                point and treatment, per gene and per principal
                                component, with a moderated F-test per term
+  build_supplementary_table.R  assembles the five result tables into
+                               Supplementary Table 6 (one workbook)
 
 04_figures/
   build_figure2.R              assembles Figure 2 from the four panel objects
+  build_figure2_pagefit.R      the same panels re-laid out to fit one journal
+                               page (180 x 202 mm); alternative, not a
+                               replacement
 ```
 
 ## Running it
@@ -89,7 +94,8 @@ the pipeline; edit those variables to re-run elsewhere. See
    independent of one another.
 3. `04_figures/build_figure2.R` depends on both and only composes: each panel
    is saved by the script that computes it, so the assembled figure cannot
-   drift from the analysis behind it.
+   drift from the analysis behind it. `build_figure2_pagefit.R` reads the same
+   panel objects and differs only in layout and panel sizing.
 
 ## Figure mapping
 
@@ -102,6 +108,8 @@ the pipeline; edit those variables to re-run elsewhere. See
 | Figure 2d | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_variancePartition_violin.pdf` |
 | Figure 2, assembled | `04_figures/build_figure2.R` | `figures/Figure2_complete.pdf` |
 | Figure 2c–d alone | `04_figures/build_figure2.R` | `figures/Figure2_panels_c_d.pdf` |
+| Figure 2, page-fit layout | `04_figures/build_figure2_pagefit.R` | `figures/Figure2_complete_pagefit.pdf` |
+| Supplementary Table 6 | `03_batch_effect/build_supplementary_table.R` | `batch_effect/Supplementary_Table_6_variance_decomposition.xlsx` |
 | Supplementary | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_canCorPairs.pdf`, `Fig_percentBars_top_genes.pdf` |
 | Supplementary Table (QC) | `02_rnaseq_qc/rnaseq_qc_table_and_plots.R` | `rnaseq_qc/Supplementary_Table_RNAseq_QC.tsv` |
 
@@ -116,8 +124,8 @@ technical validation.
 ## Software
 
 R 4.6.1 with Bioconductor: principally variancePartition 1.42.0, limma 3.68.5,
-edgeR 4.10.3, DESeq2 1.52.0, ComplexHeatmap 2.28.0, cowplot 1.2.0 and
-ggplot2 4.0.3. The full list is in `env/r_packages.tsv`, the complete session
+edgeR 4.10.4, DESeq2 1.52.0, ComplexHeatmap 2.28.0, cowplot 1.2.0,
+patchwork 1.3.2 and ggplot2 4.0.3. The full list is in `env/r_packages.tsv`, the complete session
 including transitive dependencies in `env/sessionInfo.txt`, and the session for
 the archived variance-decomposition run in
 `results/batch_effect/sessionInfo.txt`. Regenerate the first two with

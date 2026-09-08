@@ -28,7 +28,7 @@ other attached packages:
  [9] GenomicRanges_1.64.0        Seqinfo_1.2.0              
 [11] IRanges_2.46.0              S4Vectors_0.50.2           
 [13] BiocGenerics_0.58.1         generics_0.1.4             
-[15] edgeR_4.10.3                limma_3.68.5               
+[15] edgeR_4.10.4                limma_3.68.5               
 
 loaded via a namespace (and not attached):
  [1] tidyselect_1.2.1    dplyr_1.2.1         farver_2.1.2       

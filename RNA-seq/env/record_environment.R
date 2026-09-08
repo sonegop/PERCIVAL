@@ -13,7 +13,7 @@ PKGS <- c(
   # variance decomposition and differential expression
   "variancePartition", "limma", "edgeR", "DESeq2", "matrixStats",
   # figures
-  "ggplot2", "cowplot", "ComplexHeatmap", "circlize", "RColorBrewer", "ggrepel",
+  "ggplot2", "cowplot", "patchwork", "ComplexHeatmap", "circlize", "RColorBrewer", "ggrepel",
   # data handling and I/O
   "tidyverse", "dplyr", "tidyr", "readr", "openxlsx", "jsonlite"
 )
