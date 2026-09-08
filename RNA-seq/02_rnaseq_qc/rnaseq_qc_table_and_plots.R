@@ -213,6 +213,9 @@ ggsave(file.path(FIG_DIR, "Fig_2A_read_retention.pdf"), p2A,
        width = 11, height = 5)
 
 # ---- 5. Mapping-rate boxplot (Fig 2B) ------------------------------------ #
+# geom_jitter draws from the RNG, so the seed is fixed here: without it the
+# point positions, and therefore the output file, change on every run.
+set.seed(42)
 map_df <- meta %>%
   left_join(star_df %>% select(Sample, star_uniquely_mapped_pct), by = "Sample") %>%
   mutate(Treatment = factor(Condition, levels = c("Cntr","E1_D3","E1_D4")),
