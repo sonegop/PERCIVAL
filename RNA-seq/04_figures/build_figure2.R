@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # ===========================================================================
-# Figure 2 — assembly.
+# Figure 2 — tall alternative layout.
 #
 #   a  read retention through the pipeline        02_rnaseq_qc/plot_read_retention.R
 #   b  sample-to-sample distance heatmap          02_rnaseq_qc/plot_sample_distance_heatmap.R
@@ -8,8 +8,11 @@
 #      component to the experimental factors beneath it
 #   d  per-gene variance explained                03_batch_effect/variance_partition.R
 #
-# Panels c and d are new at revision; a and b are unchanged from the submitted
-# figure. Each producing script saves its panel object, so this script only
+# Kept as an alternative to the figure submitted with the revision, which is
+# built by 04_figures/build_figure2_pagefit.R and letters the panels
+# differently (violins c, PCA d, per-axis bars e). The letters below are drawn
+# into this script's images and do not match the manuscript. Each producing
+# script saves its panel object, so this script only
 # composes — it recomputes nothing and cannot drift from the panels the
 # analysis scripts wrote.
 #

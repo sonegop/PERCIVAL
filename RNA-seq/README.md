@@ -42,7 +42,7 @@ env/                           R package versions for the archived run
   plot_sample_distance_heatmap.R   blind VST, Euclidean distances, clustering
   rnaseq_qc_table_and_plots.R      supplementary QC table and QC panels
 
-03_batch_effect/               technical validation; Figure 2c and 2d
+03_batch_effect/               technical validation; Figure 2c, 2d and 2e
   variance_partition.R         variancePartition: contribution of trial, time
                                point and treatment, per gene and per principal
                                component, with a moderated F-test per term
@@ -50,10 +50,10 @@ env/                           R package versions for the archived run
                                Supplementary Table 6 (one workbook)
 
 04_figures/
-  build_figure2.R              assembles Figure 2 from the four panel objects
-  build_figure2_pagefit.R      the same panels re-laid out to fit one journal
-                               page (180 x 202 mm); alternative, not a
-                               replacement
+  build_figure2_pagefit.R      assembles Figure 2 as submitted: five panels
+                               on one journal page (180 x 202 mm)
+  build_figure2.R              the same panels in a tall four-panel layout,
+                               kept as an alternative (different lettering)
 ```
 
 ## Running it
@@ -94,8 +94,8 @@ the pipeline; edit those variables to re-run elsewhere. See
    independent of one another.
 3. `04_figures/build_figure2.R` depends on both and only composes: each panel
    is saved by the script that computes it, so the assembled figure cannot
-   drift from the analysis behind it. `build_figure2_pagefit.R` reads the same
-   panel objects and differs only in layout and panel sizing.
+   drift from the analysis behind it. `build_figure2.R` reads the same panel
+   objects and differs only in layout, panel sizing and lettering.
 
 ## Figure mapping
 
@@ -103,12 +103,16 @@ the pipeline; edit those variables to re-run elsewhere. See
 |---|---|---|
 | Figure 2a | `02_rnaseq_qc/plot_read_retention.R` | `rnaseq_qc/read_retention.pdf` |
 | Figure 2b | `02_rnaseq_qc/plot_sample_distance_heatmap.R` | `rnaseq_qc/sample_distance_heatmap.pdf` |
-| Figure 2c, upper | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_PCA.pdf` |
-| Figure 2c, lower | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_variance_per_axis.pdf` |
-| Figure 2d | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_variancePartition_violin.pdf` |
-| Figure 2, assembled | `04_figures/build_figure2.R` | `figures/Figure2_complete.pdf` |
-| Figure 2c–d alone | `04_figures/build_figure2.R` | `figures/Figure2_panels_c_d.pdf` |
-| Figure 2, page-fit layout | `04_figures/build_figure2_pagefit.R` | `figures/Figure2_complete_pagefit.pdf` |
+| Figure 2c | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_variancePartition_violin.pdf` |
+| Figure 2d | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_PCA.pdf` |
+| Figure 2e | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_variance_per_axis.pdf` |
+| **Figure 2, as submitted** | `04_figures/build_figure2_pagefit.R` | `figures/Figure2_complete_pagefit.pdf` |
+| Figure 2, tall alternative | `04_figures/build_figure2.R` | `figures/Figure2_complete.pdf` |
+| New panels of the tall alternative | `04_figures/build_figure2.R` | `figures/Figure2_panels_c_d.pdf` |
+
+The tall alternative letters its panels differently (PCA and per-axis bars as
+c, violins as d) and those letters are drawn into its images. The manuscript
+uses the page-fit lettering above.
 | Supplementary Table 6 | `03_batch_effect/build_supplementary_table.R` | `batch_effect/Supplementary_Table_6_variance_decomposition.xlsx` |
 | Supplementary | `03_batch_effect/variance_partition.R` | `batch_effect/Fig_canCorPairs.pdf`, `Fig_percentBars_top_genes.pdf` |
 | Supplementary Table (QC) | `02_rnaseq_qc/rnaseq_qc_table_and_plots.R` | `rnaseq_qc/Supplementary_Table_RNAseq_QC.tsv` |

@@ -1,27 +1,24 @@
 #!/usr/bin/env Rscript
 # ===========================================================================
-# Figure 2 — page-fit alternative layout.
+# Figure 2 — assembly, as submitted with the revision.
 #
-# Same five panels as 04_figures/build_figure2.R, re-laid out to fit a single
-# journal page at the Springer Nature double-column width (183 mm max). The
+# The five panels laid out to fit a single journal page at the Springer Nature double-column width (183 mm max). The
 # device is 180 x 202 mm; every panel is sized to be legible at that width
-# rather than at the 21 x 39 in canvas the tall version uses.
+# rather than at the 21 x 39 in canvas of the tall alternative
+# (04_figures/build_figure2.R).
 #
 #   a          full width     read retention through the pipeline
 #   b | c      65% | 35%      sample-distance heatmap | per-gene variance
 #   d | e      55% | 45%      PCA of the VST matrix  | variance per component
 #
-# Panel letters differ from the tall layout, where the PCA and the per-axis
-# bars share panel c and the violins are panel d:
+# These are the letters the manuscript cites. The tall alternative letters
+# the same panels differently, with the PCA and the per-axis bars sharing
+# panel c and the violins as panel d:
 #
 #   tall layout        page-fit layout
 #   c (upper)  PCA           -> d
 #   c (lower)  per-axis bars -> e
 #   d          violins       -> c
-#
-# Prose that cites panel letters (Technical Validation, response letter) is
-# written against the tall layout and would need remapping if this version is
-# adopted for the manuscript.
 #
 # This script composes only: each panel object is read from the .rds its
 # producing script wrote, so nothing is recomputed and the two layouts cannot

@@ -71,8 +71,9 @@ reported per gene and not per axis.
 
 **4. Figure assembly** — `RNA-seq/04_figures/`
 Composes Figure 2 from the panels the analysis scripts save, in two layouts:
-the tall version (`build_figure2.R`) and a single-page version at 180 × 202 mm
-(`build_figure2_pagefit.R`). Both read the same panel objects, so neither can
+the single-page version at 180 × 202 mm submitted with the revision
+(`build_figure2_pagefit.R`), and a tall alternative (`build_figure2.R`) with
+different panel lettering. Both read the same panel objects, so neither can
 drift from the analysis behind it or from the other.
 
 ## What the RNA-seq analysis found

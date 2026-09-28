@@ -80,12 +80,12 @@ is that categorical variables with few levels enter as fixed effects.
 | `table5_significance_per_term.tsv` | genes with a significant effect per factor (moderated F-test, FDR < 0.05) |
 | `check_orthogonal_partition.tsv` | agreement with the balanced-ANOVA partition |
 | `design_balance.txt` | proof the design is balanced (5 per cell) |
-| `Fig_PCA.pdf` | Figure 2c, upper |
-| `Fig_variance_per_axis.pdf` | Figure 2c, lower |
-| `Fig_variancePartition_violin.pdf` | Figure 2d |
+| `Fig_PCA.pdf` | Figure 2d |
+| `Fig_variance_per_axis.pdf` | Figure 2e |
+| `Fig_variancePartition_violin.pdf` | Figure 2c |
 | `Fig_canCorPairs.pdf` | factor-correlation matrix, supplementary |
 | `Fig_percentBars_top_genes.pdf` | worked per-gene examples, supplementary |
-| `figure2_panels_cd.rds` | the panel objects, read by `04_figures/build_figure2.R` |
+| `figure2_panels_cd.rds` | the panel objects, read by both `04_figures/` builders |
 | `sessionInfo.txt` | package versions for this run |
 
 ## Headline numbers

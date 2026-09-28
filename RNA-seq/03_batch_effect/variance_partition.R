@@ -330,8 +330,8 @@ p_axis <- ggplot(r2_long, aes(PC, R2pct, fill = Term)) +
   theme_bw(base_size = 11) + theme(legend.position = "bottom")
 ggsave(file.path(OUT, "Fig_variance_per_axis.pdf"), p_axis, width = 9, height = 5)
 
-# The three ggplot objects behind Figure 2c and 2d are kept so that
-# 04_figures/build_figure2.R can compose the published figure without
+# The three ggplot objects behind Figure 2c, 2d and 2e are kept so that
+# the 04_figures/ builders can compose the published figure without
 # recomputing the decomposition.
 saveRDS(list(p_pca = p_pca, p_axis = p_axis, p_violin = p_violin),
         file.path(OUT, "figure2_panels_cd.rds"))
