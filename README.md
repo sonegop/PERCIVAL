@@ -5,8 +5,10 @@ Bona *et al.*, Fondazione Edmund Mach — Scientific Data descriptor.
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22232657.svg)](https://doi.org/10.5281/zenodo.22232657)
 
 This repository holds the scripts and commands used for the bioinformatic
-analyses and for generating the figures of the descriptor. It is code and
-results; the data themselves are deposited separately and openly:
+analyses and for generating the figures of the descriptor: the leaf
+transcriptome (RNA-seq) and the rhizosphere prokaryotic and fungal communities
+(16S and ITS metabarcoding). It is code and results; the data themselves are
+deposited separately and openly:
 
 | Resource | Accession |
 |---|---|
@@ -23,13 +25,17 @@ the most recent version of their record.
 ## What is here
 
 ```
-RNA-seq/     everything behind the leaf transcriptome: raw reads to Figure 2
+RNA-seq/         everything behind the leaf transcriptome: raw reads to
+                 Figure 2 and Supplementary Table 6
+metabarcoding/   the rhizosphere 16S and ITS pipeline (MICCA) and the
+                 validation plots behind Supplementary Figures S1 and S2
 ```
 
 `RNA-seq/README.md` documents the layout, how to run it and which script
-produces which panel.
+produces which panel. `metabarcoding/README.md` gives every
+MICCA command with its parameters, for both markers.
 
-## What the code does, end to end
+## What the RNA-seq code does, end to end
 
 **1. Reads to counts** — `RNA-seq/01_preprocessing_alignment/`
 SLURM batch scripts as executed on the FEM HPC cluster, every tool inside an
@@ -58,15 +64,18 @@ with sum-to-zero contrasts, on 18,425 genes retained by `filterByExpr` and with
 no most-variable-gene selection. Four products: the canonical correlations
 between the factors, the decomposition gene by gene, the same decomposition
 applied axis by axis to the principal components, and a moderated *F*-test per
-model term. The directory README explains the method, why the contrast coding
-is load-bearing, and why significance is reported per gene and not per axis.
+model term. `build_supplementary_table.R` assembles these into Supplementary
+Table 6, one workbook with a legend sheet. The directory README explains the
+method, why the contrast coding is load-bearing, and why significance is
+reported per gene and not per axis.
 
 **4. Figure assembly** — `RNA-seq/04_figures/`
-Composes Figure 2 from the four panels. Each panel object is saved by the
-script that computes it, so the assembled figure cannot drift from the analysis
-behind it.
+Composes Figure 2 from the panels the analysis scripts save, in two layouts:
+the tall version (`build_figure2.R`) and a single-page version at 180 × 202 mm
+(`build_figure2_pagefit.R`). Both read the same panel objects, so neither can
+drift from the analysis behind it or from the other.
 
-## What the analysis found
+## What the RNA-seq analysis found
 
 The design is fully crossed and balanced: 3 conditions × 2 time points ×
 2 trials × 5 biological replicates = 60 libraries, exactly five per cell. All
@@ -94,7 +103,18 @@ point than at the second — which is why the interaction term is modelled — a
 is fully separable from the design. Treatment accounts for a small and, gene by
 gene, undetectable share of leaf transcriptome variance at either time point.
 
-## Reproducing it
+## What the metabarcoding code does
+
+`metabarcoding/` holds the rhizosphere pipeline, built on MICCA 1.7.2 and run
+separately for the prokaryotic (16S rRNA, V4–V5) and fungal (ITS1) libraries:
+paired-end merging, primer trimming, length and expected-error filtering,
+UNOISE denoising to amplicon sequence variants, RDP Classifier taxonomy (2.14
+for 16S; 2.13 trained on UNITE+INSD 8.3 for ITS), rarefaction to 68,279 (16S) and
+44,822 (ITS) reads, NAST or MUSCLE alignment and a rooted tree, and export to
+BIOM. `plots_validation.R` draws the read-depth distributions and ASV
+rarefaction curves from the exported BIOM, tree and sequence files.
+
+## Reproducing the RNA-seq analysis
 
 R 4.6.1 with Bioconductor. From `RNA-seq/`, after placing the count matrix from
 Zenodo in `data/` (see `RNA-seq/data/README.md`):
@@ -116,7 +136,8 @@ running anything.
 
 ## Licence and citation
 
-Code: MIT (`LICENSE`). Data on Zenodo: CC-BY 4.0. Citation metadata for
+Code: MIT (`LICENSE`), covering both `RNA-seq/` and `metabarcoding/`. Data on
+Zenodo: CC-BY 4.0. Citation metadata for
 this repository is in `CITATION.cff`.
 
 Each release of this repository is archived on Zenodo. Cite the concept DOI,

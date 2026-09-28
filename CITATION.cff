@@ -1,13 +1,14 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the data descriptor below."
-title: "PERCIVAL: RNA-seq analysis code for the tomato leaf transcriptome dataset"
+title: "PERCIVAL: analysis code for the tomato leaf transcriptome and rhizosphere metabarcoding datasets"
 abstract: >-
-  Scripts and commands for the RNA-seq bioinformatic analyses and figure
-  generation of the Scientific Data descriptor "Multi-omics analyses of tomato
-  rhizosphere and leaves treated with a biowaste-derived biostimulant extract":
+  Scripts and commands for the bioinformatic analyses and figure generation of
+  the Scientific Data descriptor "Multi-omics analyses of tomato rhizosphere
+  and leaves treated with a biowaste-derived biostimulant extract". RNA-seq:
   preprocessing and alignment, technical validation QC, and quantification of
   the relative contributions of experimental trial, time point and treatment to
-  transcriptome variance. Metabarcoding code is deposited separately.
+  transcriptome variance. Metabarcoding: the MICCA pipeline for the 16S and ITS
+  rhizosphere libraries and its technical validation plots.
 type: software
 license: MIT
 keywords:
@@ -16,6 +17,8 @@ keywords:
   - humic substances
   - Solanum lycopersicum
   - batch effect
+  - metabarcoding
+  - rhizosphere
 repository-code: "https://github.com/sonegop/PERCIVAL"
 url: "https://doi.org/10.5281/zenodo.22232657"
 identifiers:

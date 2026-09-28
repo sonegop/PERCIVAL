@@ -112,7 +112,7 @@ Compute abundance table statistics and rarefy to standard baseline sampling dept
     micca tabletotax -i denovo_greedy_unoise/otutable_rare.txt -t denovo_greedy_unoise/taxa.txt -o taxtables
     micca tablebar -i taxtables/taxtable5.txt -o taxtables/taxtable5.png
     ```
-*   **For Fungi (ITS):** Subsampled to a uniform depth of **44,222** reads.
+*   **For Fungi (ITS):** Subsampled to a uniform depth of **44,822** reads.
     ```bash
     micca tablestats -i denovo_greedy_unoise/otutable.txt -o tablestats
     micca tablerare -i denovo_greedy_unoise/otutable.txt -o denovo_greedy_unoise/otutable_rare.txt -d 44822
