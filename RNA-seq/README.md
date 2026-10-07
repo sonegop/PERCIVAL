@@ -31,10 +31,12 @@ env/                           R package versions for the archived run
 
 01_preprocessing_alignment/    HPC pipeline (SLURM + Apptainer)
   01_run_fastqc.slurm          read QC
-  02_run_fastp.slurm           adapter and quality trimming
-  03_run_star_samtools.slurm   STAR alignment to SL5.0 / ITAG5.0, sort, index
+  02_run_fastp.slurm           a second FastQC run (despite the name; no fastp)
+  legacy/                      its fastp step made the clean reads; the HISAT2
+                               step of that script was not used
+  03_run_star_samtools.slurm   STAR two-pass alignment to SL5.0 / ITAG5.0,
+                               sort, index
   04_run_featurecounts.slurm   featureCounts -s 2, gene-level counts
-  legacy/                      an alternative HISAT2 route explored but NOT used
 
 02_rnaseq_qc/                  technical validation; Figure 2a and 2b
   plot_read_retention.R            read fate through the pipeline
@@ -87,7 +89,8 @@ the pipeline; edit those variables to re-run elsewhere. See
 
 ## Pipeline order
 
-1. `01_run_fastqc.slurm` → `02_run_fastp.slurm` → `03_run_star_samtools.slurm`
+1. `01_run_fastqc.slurm` → fastp (the fastp step of
+   `legacy/run_fastp_hisat2_samtools.slurm`) → `03_run_star_samtools.slurm`
    → `04_run_featurecounts.slurm`, producing the raw count matrix deposited on
    Zenodo as `RNAseq_rawcounts.tsv`.
 2. `02_rnaseq_qc/*` and `03_batch_effect/*` each depend only on step 1 and are

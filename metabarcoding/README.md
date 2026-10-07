@@ -4,7 +4,7 @@ This section contains the bioinformatic pipelines used for processing the rhizos
 
 ## Prerequisites & Software Versions
 * **MICCA** v.1.7.2
-* **RDP Classifier** v.2.14 (used for 16S) and v.2.13 (custom-trained for ITS)
+* **RDP Classifier** v.2.14, updated to training set n.19 (used for 16S), and v.2.13 (custom-trained for ITS)
 * **SILVA Database** v.132 (Prokaryotes reference)
 * **UNITE Database** Full UNITE+INSD dataset for eukaryotes, version 10.05.2021 (Fungi reference)
 * **Java** (for running the standalone RDP Classifier)
@@ -80,7 +80,7 @@ micca otu \
 ## 3. Taxonomic Assignment
 
 ### For Prokaryotes (16S)
-Taxonomic classification executed using **RDP Classifier (v2.14)** against the SILVA reference database with a confidence cutoff of 0.5:
+Taxonomic classification executed using **RDP Classifier (v2.14)**, updated to training set n.19, against the SILVA reference database with a confidence cutoff of 0.5:
 ```bash
 java -Xms20g -Xmx30g -jar /micca/db/rdp_classifier_2.14/dist/classifier.jar classify \
   -g 16srrna \
